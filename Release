@@ -6,3 +6,4 @@ Codename: iPhoenix42
 Architectures: darwin-arm64 
 Components: main
 Description: À ajouter dans les sources de NitoTV (TvOS)
+Icone: ./CydiaIcon.png
