@@ -1,0 +1,15 @@
+Package: org.bao3.heibang.atv.sftpserver
+Version: 0.0.2
+Architecture: darwin-arm64
+Maintainer: Tyrael
+Filename: ./atv/debs/org.bao3.heibang.atv.sftpserver.deb
+Size: 90222
+MD5sum: da4e8ef178e0620f2ba231b203b0fd11
+SHA1: 53229af03a9871fd368931ad054bf2552ccdee58
+SHA256: 12e2f5455f91b61a032897c4e2c9da2fbdf7efb85212bd37fda3e897891d54ad
+Section: System
+Description: Let you use sftp in Mac/PC .
+Tag: role::hacker
+Author: Tyrael
+Name: sftp-server4ATV
+
