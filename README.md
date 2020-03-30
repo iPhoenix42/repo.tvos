@@ -1,2 +1,2 @@
-# iphoenix42.repo.tvos.github.io
+# https://iphoenix42.github.io/repo.tvos/
 Mon repo TvOS personnel
