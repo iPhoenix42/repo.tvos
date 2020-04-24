@@ -4,12 +4,26 @@ Architecture: darwin-arm64
 Maintainer: iPhoenix42 <iphoenix42@outlook.com>
 Depends: mobilesubstrate, ws.hbang.common (>= 1.11), com.muirey03.libimagepicker, firmware (>= 11.0)
 Filename: ./debs/com.iphoenix42.sleepsaver.deb
-Size: 2270020
-MD5sum: fe67114819c3691ed342f4001a54ad71
-SHA1: ea28ab37fb1733e8a509be7a1261cc296e943d6d
-SHA256: 87029bd5b1cf2b01ad734acddb2858a9b89d4e6864431f6268eb646bcd14e937
-Section: Supports TvOS 13
+Size: 2270040
+MD5sum: bede4b49cb2b20dbe2b50eca4529ba30
+SHA1: b0918dd1571c048ce10f4174027099c510a655cc
+SHA256: 547963bc85556e83f84f52f92b1661691e8f051bc70ec75d521b163e9d33cc4e
 Description: ScreenSaver pour TVOS
 Author: iPhoenix42 <iphoenix42@outlook.com>
 Name: SleepSaver
+
+Package: org.bao3.heibang.atv.sftpserver
+Version: 0.0.2
+Architecture: darwin-arm64
+Maintainer: Tyrael
+Filename: ./debs/org.bao3.heibang.atv.sftpserver.deb
+Size: 90222
+MD5sum: da4e8ef178e0620f2ba231b203b0fd11
+SHA1: 53229af03a9871fd368931ad054bf2552ccdee58
+SHA256: 12e2f5455f91b61a032897c4e2c9da2fbdf7efb85212bd37fda3e897891d54ad
+Section: System
+Description: Let you use sftp in Mac/PC .
+Tag: role::hacker
+Author: Tyrael
+Name: sftp-server4ATV
 
