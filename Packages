@@ -13,3 +13,12 @@ Tag: role::hacker
 Author: Tyrael
 Name: sftp-server4ATV
 
+Package: com.iphoenix42.sleepsaver
+Version: 1.1
+Section: Supports TvOS 13
+Maintainer: iPhoenix42 <iphoenix42@outlook.com>
+Depends: mobilesubstrate, ws.hbang.common (>= 1.11), com.muirey03.libimagepicker, firmware (>= 11.0)
+Architecture: darwin-arm64
+Name: SleepSaver
+Author: iPhoenix42 <iphoenix42@outlook.com>
+Description: ScreenSaver pour TVOS
