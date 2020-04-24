@@ -12,22 +12,17 @@ Créer un dossier qui portera le nom du tweak et créer trois sous dossier :
 
 MODELE DE CONSTRUCTION D’UN DEB
 
-📂 DEBIAN
- ↳ 🗂control
-    ↳ 📄control 
- ↳ 🗂preinst (optionnel)
-    ↳ 📄preinst
- ↳ 🗂postinst (optionnel)
-    ↳ 📄postinst
- ↳ 🗂prerm (optionnel)
-    ↳ 📄prerm
- ↳ 🗂postrm (optionnel)
-    ↳ 📄postrm
-📂 Applications
- ↳ 🗂Application.app
-📂Library (racine de l’iDevice)
- ↳ 🗂usr (exemple)
- ↳ 🗂var (exemple)
+- 📂 DEBIAN
+- -↳ 📄control 
+- -↳ 📄preinst (optionnel)
+- -↳ 📄postinst (optionnel)
+- -↳ 📄prerm (optionnel)
+- -↳ 📄postrm (optionnel)
+- 📂 Applications
+- -↳ 🗂Application.app
+- 📂Library (racine de l’iDevice)
+- -↳ 🗂usr (exemple)
+- -↳ 🗂var (exemple)
 
 
 Dans le dossier « 🗂 control », un fichier « control » (sans extension)  modifiable avec : 
@@ -36,29 +31,42 @@ Dans le dossier « 🗂 control », un fichier « control » (sans extension
 
 Voici un exemple du contenu du fichier control:
 
-Package: com.vous.nomdevotrepaquet
-Name: Nom du tweak
-Depends: mobilesubstrate (NE PAS TOUCHER)
-Architecture: iphoneos-arm (NE PAS TOUCHER)
-Description: la description de votre tweak
-Maintainer: vous <votre adresse mail> (laissez bien les < > )
-Author: vous
-Section: catégorie concernant le tweak
-Version: version de votre tweak
+- Package: com.vous.nomdevotrepaquet
+- Name: Nom du tweak
+- Depends: mobilesubstrate (NE PAS TOUCHER)
+- Architecture: iphoneos-arm (NE PAS TOUCHER)
+- Description: la description de votre tweak
+- Maintainer: vous <votre adresse mail> (laissez bien les < > )
+- Author: vous
+- Section: catégorie concernant le tweak
+- Version: version de votre tweak
 
 
-Pour le dossier Applications, il sera pas nécessaire de modifier ce dossier, il n’y a pas d’application a l’intérieur, à par si vous voulez mettre une application dans votre source pour l’afficher sur le SpringBoard.
+Applications: Pour le dossier Applications, il sera pas nécessaire de modifier ce dossier, il n’y a pas d’application a l’intérieur, à par si vous voulez mettre une application dans votre source pour l’afficher sur le SpringBoard.
 
-Pour le dossier Library, il sera le point de départ de la racine de l’iDevice.
+Library: Pour le dossier Library, il sera le point de départ de la racine de l’iDevice. 
+Ne confondez pas :
+- Library de System -> Library
+- "Library" de la racine de votre iDevice, 
+
+Nous c'est celui de la racine (/) Attention a la confusion toutefois, Le dossier Library ne part pas du dossier Library de l'iDevice, rien a voir, le Library du dossier du tweak définie / (la racine)
+Donc si vous devez placer des dossier systemes, il se placera comme ça : 
+
+- 📂Library (racine de l’iDevice)
+- -↳ 🗂Library (exemple)
+- ----↳ 🗂MobileSubstrate
+- -↳ 🗂System (exemple)
+- ----↳ 🗂Library
+- -------↳ 🗂Spotlight
 
 — — — — — — 
 
 Apres que le fichier control est complété, on va utiliser le Terminal.
 Rien de plus compliqué, juste à recopier les lignes de commandes du tutoriel.
 
-Avec le Terminal, on va aller sur le bureau
+Avec le Terminal, on va aller sur le bureau:
 
-- Mac / Linux : cd /Desktop (pour mac et Linux)
+- Mac / Linux : cd Desktop (si ça ne fonctionne pas faites cd /Desktop)
 
 Avec le terminal, on va « Transformer » le dossier que vous avez créer en « .deb » 
 
@@ -72,10 +80,10 @@ Ensuite, vous allez créer un fichier avec extension sh qui s’appellera « up
 
 le fichier update.sh contiendra ces lignes :
 
-#!/bin/sh
-rm -rf Packages Packages.bz2
-dpkg-scanpackages -m ./debs/ /dev/null >Packages
-bzip2 -k -z Packages 
+- #!/bin/sh
+- rm -rf Packages Packages.bz2
+- dpkg-scanpackages -m ./debs/ /dev/null >Packages
+- bzip2 -k -z Packages 
 
 
 Si un jour, vous voyez dans plusieurs sources sur github ou d’autres sources, le fichier « Packages.gz », il sera pas vraiment utile de le créer, puisque que pour que votre source soit reconnu, il lui faut que 3 fichiers nécessaires  pour l’affichage des paquets sur le gestionnaire de paquets: 
@@ -90,16 +98,16 @@ Dès que le fichier update est crée, vous allez créer un fichier sans extensio
 
 Vous y rajouterez les informations ci dessous : 
 
-Package: com.vous.nomdevotrepaquet
-Version: 1.0
-Architecture: iphoneos-arm
-Maintainer: vous <votre adresse mail>
-Depends: mobilesubstrate
-Filename: ./debs/Debian/votretweak/deb/com.vous.nomdevotrepaquet.deb
-Section: catégorie concernant le tweak
-Description: la description de votre tweak
-Author: vous <votre adresse mail>
-Name: Nom du tweak
+- Package: com.vous.nomdevotrepaquet
+- Version: 1.0
+- Architecture: iphoneos-arm
+- Maintainer: vous <votre adresse mail>
+- Depends: mobilesubstrate
+- Filename: ./debs/Debian/votretweak/deb/com.vous.nomdevotrepaquet.deb
+- Section: catégorie concernant le tweak
+- Description: la description de votre tweak
+- Author: vous <votre adresse mail>
+- Name: Nom du tweak
 
 
 
@@ -110,7 +118,7 @@ Fichier Packages fait, vous pouvez lancer la commande dans le terminal (n’oubl
 Le fichier Packages.bz2 apparait dans le bureau.
 
 — — — — — —
-[SUR LE SITE DE GITHUB] 
+[SUR LE SITE DE GITHUB] — — — — — — 
 
 Créer un compte GitHub et créer un REPOSITORY (repo):
 https://github.com/new
@@ -135,7 +143,7 @@ Votre repos est en ligne.
 Vous pouvez ajouter votre repo sur votre gestionnaire de paquet (Cydia / Sileo / Zebra / Installer 5)
 
 — — — — — —
-
+[SUR LE BUREAU DE VOTRE PC] — — — — — —
 
 Pour ajouter vos « création », il ne reste plus qu’à : 
 
