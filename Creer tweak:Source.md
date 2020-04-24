@@ -34,7 +34,7 @@ Voici un exemple du contenu du fichier control:
 - Package: com.vous.nomdevotrepaquet
 - Name: Nom du tweak
 - Depends: mobilesubstrate (NE PAS TOUCHER)
-- Architecture: iphoneos-arm (NE PAS TOUCHER)
+- Architecture: appletvos-arm (NE PAS TOUCHER)
 - Description: la description de votre tweak
 - Maintainer: vous <votre adresse mail> (laissez bien les < > )
 - Author: vous
@@ -100,7 +100,7 @@ Vous y rajouterez les informations ci dessous :
 
 - Package: com.vous.nomdevotrepaquet
 - Version: 1.0
-- Architecture: iphoneos-arm
+- Architecture: appletvos-arm
 - Maintainer: vous <votre adresse mail>
 - Depends: mobilesubstrate
 - Filename: ./debs/Debian/votretweak/deb/com.vous.nomdevotrepaquet.deb
